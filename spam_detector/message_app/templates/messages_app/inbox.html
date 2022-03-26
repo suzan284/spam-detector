@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Inbox</title>
+</head>
+<body>
+My messages
+
+<table>
+    <tr>
+        <th>Subject</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Spam</th>
+    </tr>
+    {% for message in inboxes %}
+    <tr>
+        <td><a href="{% url 'messages:read' message.id  %}"> {{message.subject}} </a> </td>
+        <td>{{message.sender}}</td>
+        <td>{{message.recipient}}</td>
+        <td>{{message.spam_detected</td>
+
+    </tr>
+    {% endfor %}
+</table>
+ <a href="{% url 'messages:new' %}"><button>New Message</button></a>
+</body>
+</html>
